@@ -1,0 +1,56 @@
+/****PARSING****/
+gnl
+
+
+/****WINDOW****/
+void *mlx_new_window ( void *mlx_ptr, int size_x, int size_y, char *title );
+x, y size of screen
+title for the name of the window
+mlx_ptr screen connection indentifier mlx_init();
+
+
+/****ADD PIXEL****/
+
+add pixel int	mlx_pixel_put(void *mlx_ptr, void *win_ptr, int x, int y, int color);
+
+x, y coordonee du pixel.
+mlx_ptr screen connection indentifier mlx_init();
+win_ptr window id mxl_new_window;
+
+/****isometric****/
+...
+
+/****matrice****/
+0 0 0 10 0
+0 0 0 10 0
+0 0 0 10 0
+0 0 0 10 0
+0 0 0 10 0
+malloc(largeur)[i] = malloc(hauteur);
+
+/****Global Struct****/
+typedef struct s_data
+{
+	int	width;
+	int	height;
+	void *mlx_ptr;
+	void *win_ptr;
+	int **matrice;
+}	t_data;
+
+/****square****/
+.....
+. . .
+.....
+. . .
+.....
+
+/****touche****/
+
++ 65451
+- 65453
+echap 65307
+w 119
+a 97
+s 115
+d 100
