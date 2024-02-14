@@ -96,7 +96,7 @@ void	check_file(char *str)
 
 	fd = open(str, O_RDONLY);
 	if (fd == -1)
-		erreur_mess("Ereur ouverture fichier !");
+		erreur_mess("Erreur ouverture fichier !");
 	len = ft_strlen(str);
 	dot = ft_substr(str, len - 4, len);
 	if (ft_strcmp(dot, ".fdf") != 0)
