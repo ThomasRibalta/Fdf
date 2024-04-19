@@ -63,7 +63,7 @@ void	free_all(t_data *data)
 	int	i;
 
 	i = 0;
-	while (i < data->height)
+	while (data->matrice[i])
 	{
 		free(data->matrice[i]);
 		i++;

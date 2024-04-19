@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   readfile.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thoribal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:21:16 by thoribal          #+#    #+#             */
-/*   Updated: 2023/11/09 11:22:49 by thoribal         ###   ########.fr       */
+/*   Updated: 2024/04/19 18:43:33 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 #include "fdf.h"
 
 int	get_width(char *str)
@@ -78,12 +80,12 @@ void	parsing(char *str, t_data *data)
 {
 	int	i;
 
-	i = 0;
+	i = -1;
 	data->width = get_width(str);
 	data->height = get_height(str);
 	data->matrice = malloc(sizeof(int *) * (data->height + 1));
-	while (i != data->height)
-		data->matrice[i++] = malloc(sizeof(int) * (data->width + 1));
+	while (++i != data->height)
+		data->matrice[i] = malloc(sizeof(int) * (data->width + 1));
 	get_matrice(str, data);
 	get_min(data);
 }
