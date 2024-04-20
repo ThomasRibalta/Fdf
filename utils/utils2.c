@@ -68,11 +68,11 @@ void	free_all(t_data *data)
 		free(data->matrice[i]);
 		i++;
 	}
-	// mlx_destroy_window(data->mlx_ptr, data->win_ptr);
-	// mlx_destroy_image(data->mlx_ptr, data->img_ptr);
-	// mlx_destroy_display(data->mlx_ptr);
+	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+	mlx_destroy_image(data->mlx_ptr, data->img_ptr);
+	mlx_destroy_display(data->mlx_ptr);
 	free(data->matrice);
-	//free(data->mlx_ptr);
+	free(data->mlx_ptr);
 	free(data);
 	exit(0);
 }

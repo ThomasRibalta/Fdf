@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:21:16 by thoribal          #+#    #+#             */
-/*   Updated: 2024/04/20 11:25:50 by toto             ###   ########.fr       */
+/*   Updated: 2024/04/20 11:57:28 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	get_height(char *str, t_data *data)
 	int		fd;
 
 	i = 0;
-	fd = open("maps/test_maps/42.fdf", O_RDONLY);
+	fd = open(str, O_RDONLY);
 	line = get_next_line(fd);
 	data->width = count_words(line, ' ');
 	while (line){

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thoribal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:14:22 by thoribal          #+#    #+#             */
-/*   Updated: 2023/11/09 10:19:33 by thoribal         ###   ########.fr       */
+/*   Updated: 2024/04/20 11:55:34 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	clear_img(t_data *data)
 	int	endian;
 
 	i = 0;
-	//data->img_data = (int *)mlx_get_data_addr(data->img_ptr, &bits_per_pixel,
-	//		&size_line, &endian);
+	data->img_data = (int *)mlx_get_data_addr(data->img_ptr, &bits_per_pixel,
+			&size_line, &endian);
 	while (i < 1200 * 600)
 		data->img_data[i++] = 0;
 }

@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:04:10 by thoribal          #+#    #+#             */
-/*   Updated: 2024/04/19 20:10:09 by toto             ###   ########.fr       */
+/*   Updated: 2024/04/20 11:56:31 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,19 +70,19 @@ void	init_data(t_data *data)
 	data->ry = 0;
 	data->rz = 0;
 	data->parallel = -1;
-	//data->img_ptr = mlx_new_image(data->mlx_ptr, 1200, 600);
+	data->img_ptr = mlx_new_image(data->mlx_ptr, 1200, 600);
 }
 
-// void	start(t_data *data)
-// {
-// 	data->mlx_ptr = mlx_init();
-// 	data->win_ptr = mlx_new_window(data->mlx_ptr, 1200, 600, "42FDF");
-// 	init_data(data);
-// 	mlx_hook(data->win_ptr, 2, 1L << 0, key_hook, data);
-// 	mlx_hook(data->win_ptr, 17, 0, close_win, data);
-// 	mlx_loop_hook(data->mlx_ptr, draw, data);
-// 	mlx_loop(data->mlx_ptr);
-// }
+void	start(t_data *data)
+{
+	data->mlx_ptr = mlx_init();
+	data->win_ptr = mlx_new_window(data->mlx_ptr, 1200, 600, "42FDF");
+	init_data(data);
+	mlx_hook(data->win_ptr, 2, 1L << 0, key_hook, data);
+	mlx_hook(data->win_ptr, 17, 0, close_win, data);
+	mlx_loop_hook(data->mlx_ptr, draw, data);
+	mlx_loop(data->mlx_ptr);
+}
 
 int	main(int ac, char **av)
 {
@@ -95,5 +95,5 @@ int	main(int ac, char **av)
 	if (!data)
 		exit(0);
 	parsing(av[1], data);
-	//start(data);
+	start(data);
 }

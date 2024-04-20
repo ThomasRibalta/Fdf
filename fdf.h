@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:11:25 by thoribal          #+#    #+#             */
-/*   Updated: 2024/04/20 11:25:31 by toto             ###   ########.fr       */
+/*   Updated: 2024/04/20 11:56:46 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "utils/get_next_line/get_next_line.h"
 # include <math.h>
-//# include <mlx.h>
+# include <mlx.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
