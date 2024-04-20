@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:21:16 by thoribal          #+#    #+#             */
-/*   Updated: 2024/04/19 18:43:33 by toto             ###   ########.fr       */
+/*   Updated: 2024/04/20 11:25:50 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	get_width(char *str)
 	int		fd;
 
 	fd = open(str, O_RDONLY);
-	line = get_next_line(fd, 1);
+	line = get_next_line(fd);
 	i = count_words(line, ' ');
 	free(line);
 	close(fd);
@@ -37,12 +37,14 @@ int	get_height(char *str)
 	fd = open(str, O_RDONLY);
 	while (1)
 	{
-		line = get_next_line(fd, 1);
+		printf("test\n");
+		line = get_next_line(fd);
 		if (!line)
 			break ;
 		free(line);
 		i++;
 	}
+	printf("fini\n");
 	close(fd);
 	free(line);
 	return (i);
@@ -61,7 +63,7 @@ void	get_matrice(char *str, t_data *data)
 	fd = open(str, O_RDONLY);
 	while (++i != data->height)
 	{
-		line = get_next_line(fd, 1);
+		line = get_next_line(fd);
 		split = ft_split(line, ' ');
 		free(line);
 		while (++j != data->width)
@@ -72,7 +74,7 @@ void	get_matrice(char *str, t_data *data)
 		free(split);
 		j = -1;
 	}
-	get_next_line(fd, 0);
+	get_next_line(fd);
 	close(fd);
 }
 

@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 11:07:18 by thoribal          #+#    #+#             */
-/*   Updated: 2024/04/19 19:01:42 by toto             ###   ########.fr       */
+/*   Updated: 2024/04/19 21:04:37 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ char	*get_word(char *str, char c)
 		i++;
 	}
 	word[i] = '\0';
-	if (word[0] == '\n')
-		free(word);
+	// if (word[0] == '\n')
+	// 	free(word);
 	return (word);
 }
 

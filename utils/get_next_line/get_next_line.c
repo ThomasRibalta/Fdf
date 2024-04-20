@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thoribal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:52:24 by thoribal          #+#    #+#             */
-/*   Updated: 2023/10/20 12:35:57 by thoribal         ###   ########.fr       */
+/*   Updated: 2024/04/20 11:26:14 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../fdf.h"
+#include "get_next_line.h"
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,13 +21,13 @@ char	*get_next_end(int fd, char *str)
 	char	*buffer;
 	int		b;
 
-	buffer = malloc(sizeof(char) * 1 + 1);
+	buffer = malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (!buffer)
 		return (NULL);
 	b = 1;
 	while (b != 0 && !ft_strchr(str, '\n'))
 	{
-		b = read(fd, buffer, 1);
+		b = read(fd, buffer, BUFFER_SIZE);
 		if (b < 0)
 		{
 			free(buffer);
@@ -76,37 +76,31 @@ char	*save_next(char *s)
 	return (str);
 }
 
-char	*get_next_line(int fd, int n)
+char	*get_next_line(int fd)
 {
 	char		*line;
 	static char	*s;
 
-	if (fd < 0 || 1 <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	s = get_next_end(fd, s);
+	if (!s)
+		return (NULL);
 	line = get_line(s);
 	s = save_next(s);
-	if (!n)
-		free(s);
 	return (line);
 }
-/*
-int	main(void)
-{
-	int	fd;
-	char	*line;
 
-	fd = open("big_line_no_nl", O_RDONLY);
-	line = get_next_line(fd);
-	printf("%s", line);
-	free(line);
-	line = get_next_line(fd);
-	printf("%s", line);
-	free(line);
-	line = get_next_line(fd);
-	printf("%s", line);
-	free(line);
-	line = get_next_line(fd);
-	printf("%s", line);
-	free(line);
-}*/
+// int	main(void)
+// {
+// 	int	fd;
+// 	char	*line;
+
+// 	fd = open("julia.fdf", O_RDONLY);
+// 	line = get_next_line(fd);
+// 	while (line){
+// 		printf("%s", line);
+// 		free(line);
+// 		line = get_next_line(fd);
+// 	}
+// }

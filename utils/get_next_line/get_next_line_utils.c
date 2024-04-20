@@ -11,10 +11,10 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 size_t	ft_strlen(const char *s)
 {
@@ -28,7 +28,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char	*ft_strdup(char *s)
+char	*ft_strdup(const char *s)
 {
 	char	*dup;
 	int		i;
@@ -101,7 +101,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (ft_strlen(s) - start < len)
 		len = ft_strlen(s) - start;
-	sub = malloc((len + 15) * sizeof(char));
+	sub = malloc((len + 1) * sizeof(char));
 	if (!sub)
 		return (NULL);
 	while (s[i])

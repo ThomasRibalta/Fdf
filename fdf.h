@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thoribal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:11:25 by thoribal          #+#    #+#             */
-/*   Updated: 2023/11/12 14:18:34 by thoribal         ###   ########.fr       */
+/*   Updated: 2024/04/20 11:25:31 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void		ft_putstr_fd(char *s, int fd);
 int			draw(t_data *data);
 int			ft_atoi(const char *str);
 char		**ft_split(char *s, char c);
-char		*get_next_line(int fd, int n);
+//char		*get_next_line(int fd, int n);
 int			count_words(char *str, char c);
 
 #endif
