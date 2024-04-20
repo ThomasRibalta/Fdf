@@ -96,11 +96,15 @@ char	*get_next_line(int fd)
 // 	int	fd;
 // 	char	*line;
 
-// 	fd = open("julia.fdf", O_RDONLY);
+// 	fd = open("maps/test_maps/julia.fdf", O_RDONLY);
 // 	line = get_next_line(fd);
+// 	int i;
+
+// 	i = 0;
 // 	while (line){
-// 		printf("%s", line);
 // 		free(line);
 // 		line = get_next_line(fd);
+// 		i++;
 // 	}
+// 	printf("%d", i);
 // }

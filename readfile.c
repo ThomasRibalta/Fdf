@@ -13,41 +13,40 @@
 
 #include "fdf.h"
 
-int	get_width(char *str)
-{
-	char	*line;
-	int		i;
-	int		fd;
+// int	get_width(char *str)
+// {
+// 	char	*line;
+// 	int		i;
+// 	int		fd;
 
-	fd = open(str, O_RDONLY);
-	line = get_next_line(fd);
-	i = count_words(line, ' ');
-	free(line);
-	close(fd);
-	return (i);
-}
+// 	fd = open(str, O_RDONLY);
+// 	line = get_next_line(fd);
+// 	i = count_words(line, ' ');
+// 	free(line);
+// 	close(fd);
+// 	return (i);
+// }
 
-int	get_height(char *str)
+void	get_height(char *str, t_data *data)
 {
 	char	*line;
 	int		i;
 	int		fd;
 
 	i = 0;
-	fd = open(str, O_RDONLY);
-	while (1)
-	{
-		printf("test\n");
-		line = get_next_line(fd);
-		if (!line)
-			break ;
+	fd = open("maps/test_maps/42.fdf", O_RDONLY);
+	line = get_next_line(fd);
+	data->width = count_words(line, ' ');
+	while (line){
+		//printf("%d %s", i, line);
 		free(line);
+		line = get_next_line(fd);
 		i++;
 	}
 	printf("fini\n");
 	close(fd);
 	free(line);
-	return (i);
+	data->height = i;
 }
 
 void	get_matrice(char *str, t_data *data)
@@ -83,8 +82,8 @@ void	parsing(char *str, t_data *data)
 	int	i;
 
 	i = -1;
-	data->width = get_width(str);
-	data->height = get_height(str);
+	get_height(str, data);
+	printf("%d, %d\n\n", data->width, data->height);
 	data->matrice = malloc(sizeof(int *) * (data->height + 1));
 	while (++i != data->height)
 		data->matrice[i] = malloc(sizeof(int) * (data->width + 1));

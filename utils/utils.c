@@ -28,8 +28,8 @@ void	clear_img(t_data *data)
 	int	endian;
 
 	i = 0;
-	data->img_data = (int *)mlx_get_data_addr(data->img_ptr, &bits_per_pixel,
-			&size_line, &endian);
+	//data->img_data = (int *)mlx_get_data_addr(data->img_ptr, &bits_per_pixel,
+	//		&size_line, &endian);
 	while (i < 1200 * 600)
 		data->img_data[i++] = 0;
 }
