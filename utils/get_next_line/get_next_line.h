@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:42:19 by thoribal          #+#    #+#             */
-/*   Updated: 2024/04/20 11:17:29 by toto             ###   ########.fr       */
+/*   Updated: 2024/05/17 17:16:39 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10000
+#  define BUFFER_SIZE 100000
 # endif
 
 size_t	ft_strlen(const char *s);
