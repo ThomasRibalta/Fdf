@@ -15,7 +15,7 @@
 
 # include "utils/get_next_line/get_next_line.h"
 # include <math.h>
-# include <mlx.h>
+//# include <mlx.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
