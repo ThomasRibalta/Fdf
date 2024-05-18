@@ -14,8 +14,7 @@ OBJ = $(SRC:.c=.o)
 $(NAME):	$(OBJ)
 	$(CC) $(OBJ) $(FRAMEWORK) -o $(NAME)
 
-all:
-	$(NAME)
+all: $(NAME)
 
 clean:
 	$(RM) $(OBJ)
